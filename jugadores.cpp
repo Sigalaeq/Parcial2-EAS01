@@ -35,7 +35,7 @@ int main()
     else{
         log(acum);
     }
-    
+
     /*
         Crear al menos 2 jugadores con diferentes nombres, vida y ataque. 
         Los jugadores deben atacarse entre sí, tomando turnos, hasta que uno pierda toda su vida.
@@ -77,7 +77,7 @@ n=name;
 
 void Jugador::atacar( Jugador Jugador ){/* Agregar parámetros para atacar a otro Jugador */
    Jugador.vida=Jugador.vida-Jugador.atack;
-   radn(x)*1000;
+   rand(x)*1000;
    
     /*
         El jugador atacado(el que recibes como parámetro) pierde HP igual al ataque del jugador que ataca.
