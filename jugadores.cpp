@@ -7,20 +7,34 @@ using namespace std;
 #define log(x) cout << x << endl;
 
 class Jugador{
+    int vida,atack;
+    string name;
+    Jugador* last;
     /*
-        Agrega propiedades para guardar la vida(número entero), ataque(número entero) y nombre del jugador.
+        
         Agrega una propiedad para guardar el jugador que lo atacó por última vez.
     */
     
     Jugador(); 
-    Jugador(/* agrega parámetros para asignar hp, ataque y nombre */); 
-    
-    void atacar(/* agregar parámetros para atacar a otro jugador*/); 
+    Jugador(int hp, int damage, string n ); /* agrega parámetros para asignar hp, ataque y nombre */
+    void atacar(jug); /* agregar parámetros para atacar a otro jugador*/
 };
 
 int main()
 {
     srand(time(0));  // Seed para generar valores aleatorios
+    int acum;
+    Jugador j1;
+    j1.vida=150;
+    j1.atack=15;
+    j1.name="Dionisio";
+    Jugador j2(190,19,"Sigala");
+    acum=vida-atack;
+    if(Jugador.vida=0)
+    cout"El jugador ha muerto";
+    else{
+        log(acum);
+    }
     
     /*
         Crear al menos 2 jugadores con diferentes nombres, vida y ataque. 
@@ -33,13 +47,27 @@ int main()
 }
 
 Jugador::Jugador(){
+    vida=100;
+    atack=5;
+    name="No definido";
     /*
         Asignar 100 a hp y 5 a attack como valores default.
         Asignar 'No definido' al nombre como default.
     */
 }
 
-Jugador::Jugador(/* Agrega parámetros para asignar hp, ataque y nombre*/){
+Jugador::Jugador(int hp, int damage, string n  ){
+if((hp>0)&&(hp<=200))
+hp=vida;
+else{
+vida=100;
+};
+if((damage>=0)&&(damage<=20))
+damage=atack;
+else{
+damage=0;
+};
+n=name;
     /*
         Asignar los parámetros recibidos a las propiedades del objeto.
         No se pueden asignar valores negativos a hp y attack.
@@ -47,7 +75,10 @@ Jugador::Jugador(/* Agrega parámetros para asignar hp, ataque y nombre*/){
     */
 }
 
-void Jugador::atacar(/* Agregar parámetros para atacar a otro Jugador */){
+void Jugador::atacar( Jugador Jugador ){/* Agregar parámetros para atacar a otro Jugador */
+   Jugador.vida=Jugador.vida-Jugador.atack;
+   radn(x)*1000;
+   
     /*
         El jugador atacado(el que recibes como parámetro) pierde HP igual al ataque del jugador que ataca.
         Existe un 20% de probabilidad de que el ataque falle y no haga daño.
